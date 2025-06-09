@@ -2,28 +2,21 @@
 
 ## Roleplay Communication System
 - This script provides an advanced communication system for roleplay servers, with multiple themed commands and a visual design inspired by aged metallic tones, wood, and twilight backgrounds for an immersive and harmonious experience.
-
 - The configuration file (Config) controls the available commands, permissions, roles, and system features. Here's a detailed summary:
 
 ## Staff Groups
 Lists roles with special permissions, for example: `'god', 'admin'`. 
-
 Allows staff members to clear the entire chat `/clear_chat` and use exclusive commands such as the administrative chat `/adminchat` and announcements `/announcement`. 
-
-Key variables: AllowStaffsToClearEveryonesChat, ClearEveryonesChatCommand, EnableStaffOnlyCommand, StaffOnlyCommand, EnableStaffCommand, StaffCommand.
 
 ## Main Commands
 
-Config.doCommand — Action command (`/do`).
-Config.meCommand — Staff description command (`/me`).
-Config.oocCommand — Out-of-role command (`/ooc`).
+Action command (`/do`).
+Description command (`/me`).
+Out-of-role command (`/ooc`).
 
 Reporting System: Commands for reporting situations: `/report`, `/reports`, `/closereport`.
-
-Allows replies with `/reply` and restricts who can reply to certain jobs (police, prosecutors, etc.). Configurable:
-EnableReportCommand, ReportCommand, ListReportCommand, CloseReportCommand, EnablereplyCommand, allowedJobs, replyCommand.
-
-Advertising: Allows players to post ads for a price and with a cooldown: `/advertisement`. Configurable: AdvertisementPrice, AdvertisementCooldown, EnableAdvertisementCommand.
+Allows replies with `/reply` and restricts who can reply to certain jobs (police, prosecutors, etc.).
+Advertising: Allows players to post ads for a price and with a cooldown: `/advertisement`.
 
 Other Themed Commands
 Rumors with `/rumor`
@@ -47,19 +40,15 @@ Variable sizes for titles, text, and subtitles to improve readability.
 
 ## Structure and Animations
 Window and messages with jagged edges and clip-path to simulate a rustic, dynamic design.
-
 Translucent backgrounds with subtle shadows and smooth animations for transitions.
 
 ## Usage
 Adjust the settings in the Lua file to enable or disable commands, set permissions, and set prices.
-
 Customize the CSS layout to suit your theme or server.
-
 Combine commands to enrich the storytelling experience and make server management easier.
 
 ## Credits
 This system was designed to offer an immersive experience, with robust functionality and aesthetics inspired by precious metals and aged wood, ideal for role-playing environments seeking authenticity and style.
-
 
 ## Version oficial or learning thanks
 - [RSG Framework](https://github.com/Rexshack-RedM) 

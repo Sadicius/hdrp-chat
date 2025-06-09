@@ -1,0 +1,217 @@
+:root {
+    /* 🎨 Metales nobles y envejecidos (comandos principales del rol) */
+    --color-me:         #ffb347;    /* Naranja suave, cálido como luz solar */
+    --color-ooc:        #ff6f61;    /* Coral encendido, para destacar sin agredir */
+    --color-do:         #ffd97d;    /* Amarillo dorado pastel, para descripciones */
+    --color-mp:         #b2a4ff;    /* Lavanda suave, representa privacidad */
+    --color-testigo:    #ff968a;    /* Rosa pálido, perceptible y delicado */
+    --color-auxilio:    #82b1ff;    /* Azul cielo al anochecer */
+    --color-rumor:      #f5a742;    /* Naranja crepuscular más profundo */
+    --color-reply:      #ff8c94;    /* Rosa intenso, diálogo directo */
+    --color-report:     var(--color-reply);
+    --color-publicidad: var(--color-rumor);
+    --color-staff:      var(--color-reply);
+    --color-anuncio:    #ffd966;    /* Amarillo claro, similar a luz de farol */
+
+    --color-susurro:    #b0bec5;    /* Gris azulado, voz baja en la noche */
+    --color-hierro:     #37474f;    /* Azul oscuro grafito */
+    --color-estaño:     #90a4ae;    /* Gris con tinte celeste */
+    --color-plata:      #f0f0f0;    /* Casi blanco para contrastar en fondo oscuro */
+    /* 🌰 Maderas y óxidos (saturadas pero armoniosas) */
+    --color-madera:        #6d4c41;  /* Marrón cálido, como madera al atardecer */
+    --color-madera-oscura: #4e342e;  /* Marrón más oscuro, acogedor */
+    --color-oxido-2:       var(--color-do);
+
+    /* 🌫 Neutros */
+    --color-humo:    rgba(255, 255, 255, 0.6);     /* Humo púrpura claro, tenue y suave */
+    --color-carbon:  #1a1c2c;     /* Azul marino muy oscuro, cielo nocturno profundo */
+
+    /* 🧱 Fondos y transparencias */
+    --bg-anuncio:     rgba(0, 0, 0, 0.7);   /* Luz de linterna cálida */
+    --bg-input:       rgba(0, 0, 0, 0.3);     /* Violeta translúcido */
+    --bg-mensaje:     rgba(0, 0, 0, 0.5);       /* Fondo noche translúcido */
+    --bg-sugerencia:  rgba(0, 0, 0, 0.2);   /* Naranja crepuscular claro */
+
+    /* 🎯 Iconos FontAwesome */
+    --fa-bg-twitch: var(--color-ooc);
+    --fa-bg-twitter:var(--color-me);
+    --fa-bg-cog: var(--color-hierro);
+    --fa-bg-bullhorn:    #ef5350;         /* Rojo amanecer brillante */
+    --fa-bg-ambulance:   #448aff;         /* Azul noche eléctrica */
+    --fa-bg-door-open:   #6d4c41;         /* Marrón cálido atenuado */
+
+    /* ✍️ Tipografía */
+    --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --fuente-size-anuncio: 1.15rem;
+    --fuente-size-title: 1.05rem;
+    --fuente-size-text: 0.95rem;
+    --fuente-size-subtext: 0.85rem;
+
+    /* ✍️ Margenes */
+    --padding-base: 6px 12px;
+
+    /* 🌑 Sombra */
+    --color-sombra: rgba(255, 255, 255, 0.05);
+}
+
+* {
+    font-family: var(--fuente-principal) !important;
+    margin: 0;
+    padding: 0;
+    transition: all 0.2s ease-in-out;
+    line-height: 1.5;   /* Mejora legibilidad */
+}
+
+#app {
+    font-family: var(--fuente-principal) !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--color-plata);
+    background-color: transparent;
+}
+
+.chat-window {
+    position: absolute;
+    top: 2%;
+    left: 135px;
+    max-width: 546px;
+    clip-path: polygon(
+        30px 0%, 100% 0%, 100% calc(100% - 30px),
+        calc(100% - 30px) 100%, 0% 100%, 0% 30px
+    );
+    box-sizing: content-box;
+    padding: 5px;
+    -webkit-animation-duration: 2s;
+}
+
+.chat-messages {
+    max-height: 100%;
+    max-width: 546px;
+    color: var(--color-plata);
+    overflow: hidden;
+    word-break: break-word;
+    box-sizing: border-box;
+    display: block;
+}
+
+.chat-input {
+    position: absolute;
+    padding: 0.2vh;
+    top: 270px;
+    left: 135px;
+    width: 39%;
+    max-width: 560px;
+    box-sizing: border-box;
+}
+
+.prefix {
+    /* position: absolute;
+    margin-top: 9.2%;
+    margin-left: 5%;
+    left: 0.208%;
+    font-size: var(--fuente-size-subtext);
+    color: var(--color-do);
+    text-shadow: 1px 1px 2px var(--color-carbon); */
+}
+
+input {
+    font-size: var(--fuente-size-title);
+    display: block;
+    box-sizing: border-box;
+    padding: 8px 24px;
+    
+    clip-path: polygon(
+        5px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 5px
+    ); 
+
+    background-color: var(--bg-anuncio);
+    height: 50px !important;
+    color: var(--color-plata);
+    width: 100%;
+    border: none;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    resize: none;
+    box-shadow: 0 0 15px var(--color-hierro), inset 0 0 8px var(--color-do);
+}
+
+input:focus {
+    outline: none;
+    background-color: var(--bg-anuncio);
+}
+
+.msg {
+     color: var(--color-plata);
+    font-weight: normal;
+    font-size: var(--fuente-size-title);
+    vertical-align: baseline;
+    background-color: var(--bg-mensaje);
+    text-shadow: 1px 1px 1px var(--color-carbon);
+    padding-right: 8px;
+}
+
+.suggestions {
+    padding: 10px;
+    margin-top: 5px;
+    list-style-type: none;
+    padding: 8px 12px;
+    font-size:  var(--fuente-size-subtext);
+    box-sizing: border-box;
+    background-color: var(--bg-mensaje);
+    clip-path: polygon(
+        0% 0%, 100% 0%, 100% calc(100% - 20px),
+        calc(100% - 20px) 100%, 0% 100%, 0% 0%
+    );
+
+    box-shadow: 0px 0px 8px -4px var(--color-carbon);
+    width: 100%;
+    border: none;
+}
+
+.help {
+    font-size:  var(--fuente-size-subtext);
+    margin-top: -10px;
+    color: var(--color-susurro);
+}
+
+.suggestion {
+    font-size:  var(--fuente-size-subtext);
+    font-weight: bold;
+    margin-bottom: 0.5px;
+    padding-left: 0.5rem;
+    color: var(--color-do);
+}
+
+.chat-message {
+    display: block !important;
+    width: 100%;
+    overflow: hidden;
+    word-break: break-word;
+    background-color: var(--bg-mensaje);
+    color: var(--color-do);
+    text-shadow: 0 0 2px var(--color-sombra);
+}
+
+.chat-fade {
+    transition: opacity 1s ease;
+    opacity: 1;
+}
+
+.chat-fade.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ICONOS */
+.fa-twitch     { background-color: var(--fa-bg-twitch)}
+.fa-twitter    { background-color: var(--fa-bg-twitter) }
+.fa-cog        { background-color: var(--fa-bg-cog) }
+.fa-bullhorn   { background-color: var(--fa-bg-bullhorn)}
+.fa-ambulance  { background-color: var(--fa-bg-ambulance)}
+.fa-door-open  { background-color: var(--fa-bg-door-open)}
+
+.fa-shield-alt, .fa-eye-slash, .fa-flag, .fa-ad {
+    background-color: var(--color-hierro);
+    padding: 1px;
+}

@@ -213,7 +213,7 @@ if Config.EnableReportCommand then
         ChatSystem.reportCooldown[src] = os.time()
 
         TriggerClientEvent('ox_lib:notify', src, { title = 'Sistema de Reportes', description = 'Reporte enviado correctamente. El staff lo revisará pronto.', type = 'success' })
-        TriggerClientEvent('rsg-chat:client:SendReport', -1, GetPlayerName(src), src, msg)
+        TriggerClientEvent('hdrp-chat:client:SendReport', -1, GetPlayerName(src), src, msg)
         local discordMessage = string.format(
                 "Citizenid:** %s\n**Ingame ID:** %d\n**Name:** %s %s\n**Report:** %s**",
                 Player.PlayerData.citizenid,
@@ -269,7 +269,7 @@ if Config.EnableReportCommand then
     end, false)
 end
 
-RegisterNetEvent('rsg-chat:server:SendReport', function(name, targetSrc, msg)
+RegisterNetEvent('hdrp-chat:server:SendReport', function(name, targetSrc, msg)
     local src = source
     if HasStaffPermission(src) then
         local template = '<div class="chat-message" style="background: var(--bg-anuncio); border-left: 4px solid var(--color-report); padding: var(--padding-base);">' ..

@@ -32,7 +32,7 @@ window.APP = {
         window.removeEventListener('message', this.listener);
     },
     mounted() {
-        post('https://rsg-chat/loaded', JSON.stringify({}));
+        post('https://hdrp-chat/loaded', JSON.stringify({}));
         this.listener = window.addEventListener('message', (event) => {
             const item = event.data || event.detail; //'detail' is for debuging via browsers
             if (this[item.type]) {
@@ -262,7 +262,7 @@ window.APP = {
         },
         send(e) {
             if (this.message !== '') {
-                post('https://rsg-chat/chatResult', JSON.stringify({
+                post('https://hdrp-chat/chatResult', JSON.stringify({
                     message: this.message,
                 }));
                 this.oldMessages.unshift(this.message);
@@ -274,7 +274,7 @@ window.APP = {
         },
         hideInput(canceled = false) {
             if (canceled) {
-                post('https://rsg-chat/chatResult', JSON.stringify({ canceled }));
+                post('https://hdrp-chat/chatResult', JSON.stringify({ canceled }));
             }
             this.message = '';
             this.showInput = false;

@@ -37,6 +37,6 @@ AddEventHandler('chat:whisper', function(id, name, message, time)
     end)
 end)
 
-RegisterNetEvent('rsg-chat:client:SendReport', function(name, src, msg)
-    TriggerServerEvent('rsg-chat:server:SendReport', name, src, msg)
+RegisterNetEvent('hdrp-chat:client:SendReport', function(name, src, msg)
+    TriggerServerEvent('hdrp-chat:server:SendReport', name, src, msg)
 end)
